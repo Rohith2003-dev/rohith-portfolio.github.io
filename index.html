@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohith | Portfolio</title>
+  <meta name="description" content="Portfolio website of Rohith – developer and creator." />
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    /* Simple fade-in animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <!-- PAGE WRAPPER -->
+  <div class="relative min-h-screen flex flex-col">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-30 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+        <div class="flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 via-sky-500 to-cyan-400 text-sm font-semibold tracking-tight">
+            R
+          </div>
+          <div class="leading-tight">
+            <p class="text-sm font-semibold tracking-tight">Rohith</p>
+            <p class="text-[11px] text-slate-400">Portfolio</p>
+          </div>
+        </div>
+        <button id="navToggle" class="sm:hidden inline-flex items-center justify-center rounded-md border border-slate-800 px-2 py-1 text-slate-200 hover:bg-slate-900">
+          <span class="sr-only">Toggle navigation</span>
+          <svg id="navIconOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="navIconClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="hidden h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 6l12 12M6 18L18 6" />
+          </svg>
+        </button>
+        <div id="navMenu" class="hidden sm:flex sm:items-center sm:gap-8 text-sm font-medium text-slate-300">
+          <a href="#about" class="nav-link hover:text-sky-400">About</a>
+          <a href="#projects" class="nav-link hover:text-sky-400">Projects</a>
+          <a href="#skills" class="nav-link hover:text-sky-400">Skills</a>
+          <a href="#contact" class="nav-link hover:text-sky-400">Contact</a>
+          <button id="themeToggle" class="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-sky-500 hover:text-sky-400">
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+      </nav>
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="sm:hidden hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl flex-col space-y-1 px-4 py-3 text-sm font-medium text-slate-300">
+          <a href="#about" class="nav-link block rounded-md px-2 py-2 hover:bg-slate-900">About</a>
+          <a href="#projects" class="nav-link block rounded-md px-2 py-2 hover:bg-slate-900">Projects</a>
+          <a href="#skills" class="nav-link block rounded-md px-2 py-2 hover:bg-slate-900">Skills</a>
+          <a href="#contact" class="nav-link block rounded-md px-2 py-2 hover:bg-slate-900">Contact</a>
+        </div>
+      </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="flex-1">
+      <!-- HERO SECTION -->
+      <section id="hero" class="relative overflow-hidden border-b border-slate-800/70 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900/90">
+        <div class="pointer-events-none absolute inset-0 opacity-40 mix-blend-screen">
+          <div class="absolute -top-32 left-10 h-72 w-72 rounded-full bg-sky-500/30 blur-3xl"></div>
+          <div class="absolute -bottom-40 right-0 h-80 w-80 rounded-full bg-indigo-500/25 blur-3xl"></div>
+        </div>
+        <div class="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:gap-20">
+          <div class="flex-1 space-y-6 text-center lg:text-left fade-in-up">
+            <p class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs font-medium text-slate-300">
+              <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+              Available for freelance &amp; full-time opportunities
+            </p>
+            <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+              Hi, I'm <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">Rohith</span>.
+              <span class="block text-slate-200">I build modern web experiences.</span>
+            </h1>
+            <p class="max-w-xl text-sm text-slate-300 sm:text-base">
+              A passionate developer focused on crafting clean, user-centered interfaces and performant web applications.
+              This is a starter portfolio you can fully customize to reflect your skills and projects.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-sm shadow-sky-500/40 transition hover:bg-sky-400">
+                Contact Me
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a href="#projects" class="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/80 px-4 py-2.5 text-sm font-medium text-slate-100 transition hover:border-sky-500 hover:text-sky-300">
+                View Projects
+              </a>
+            </div>
+            <div class="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 lg:justify-start">
+              <div class="inline-flex items-center gap-1.5 rounded-full bg-slate-900/70 px-3 py-1">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                Focused on React, JavaScript, and modern UI.
+              </div>
+            </div>
+          </div>
+          <div class="flex-1 fade-in-up lg:fade-in-up">
+            <div class="relative mx-auto flex h-64 w-64 items-center justify-center rounded-3xl border border-slate-800 bg-slate-900/70 p-4 shadow-[0_0_120px_rgba(56,189,248,0.18)] sm:h-72 sm:w-72">
+              <div class="absolute -left-2 -top-2 h-20 w-20 rounded-3xl border border-slate-800 bg-slate-900/90"></div>
+              <div class="absolute -right-4 bottom-6 h-16 w-16 rounded-3xl border border-slate-800 bg-slate-900/90"></div>
+              <div class="relative flex h-full w-full flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-center">
+                <div class="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-tr from-sky-500 to-indigo-500 text-2xl font-semibold">
+                  R
+                </div>
+                <p class="text-sm font-medium text-slate-100">Rohith</p>
+                <p class="text-xs text-slate-400">Web Developer • Problem Solver</p>
+                <div class="mt-4 flex gap-2 text-[10px] text-slate-300">
+                  <span class="rounded-full bg-slate-900/90 px-3 py-1 border border-slate-700">Frontend</span>
+                  <span class="rounded-full bg-slate-900/90 px-3 py-1 border border-slate-700">JavaScript</span>
+                  <span class="hidden rounded-full bg-slate-900/90 px-3 py-1 border border-slate-700 sm:inline">UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="border-b border-slate-800/70 bg-slate-950 py-14 sm:py-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
+            <div class="space-y-4">
+              <h2 class="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">About Me</h2>
+              <p class="text-sm leading-relaxed text-slate-300 sm:text-[15px]">
+                I'm Rohith, an aspiring software developer who enjoys turning ideas into real, interactive experiences on the web.
+                I focus on writing clean, maintainable code and designing interfaces that feel intuitive and responsive.
+              </p>
+              <p class="text-sm leading-relaxed text-slate-300 sm:text-[15px]">
+                This portfolio template is intentionally simple and flexible so you can easily adapt it to your stack – whether you prefer
+                React, vanilla JavaScript, or any other framework. You can plug in your own projects, achievements, and story.
+              </p>
+              <p class="text-sm leading-relaxed text-slate-300 sm:text-[15px]">
+                Outside of coding, I enjoy learning new tools, exploring tech communities, and working on side projects that challenge
+                the way I think about product, design, and performance.
+              </p>
+              <div class="mt-3 grid gap-4 text-xs text-slate-200 sm:text-sm sm:grid-cols-3">
+                <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-3">
+                  <p class="text-[11px] uppercase tracking-wide text-slate-400">Strengths</p>
+                  <p class="mt-1">Problem solving, curiosity, and consistency.</p>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-3">
+                  <p class="text-[11px] uppercase tracking-wide text-slate-400">Goals</p>
+                  <p class="mt-1">To grow into a well-rounded full‑stack engineer.</p>
+                </div>
+                <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-3">
+                  <p class="text-[11px] uppercase tracking-wide text-slate-400">Focus</p>
+                  <p class="mt-1">Building real products people actually use.</p>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 md:pl-6">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Quick facts</h3>
+              <ul class="space-y-3 text-sm text-slate-200">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                  <span>Comfortable with <span class="font-medium text-sky-300">HTML, CSS, JavaScript</span> and modern UI patterns.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                  <span>Interested in <span class="font-medium text-sky-300">frontend frameworks</span> and <span class="font-medium text-sky-300">responsive design</span>.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                  <span>Open to <span class="font-medium text-sky-300">internships, freelance work,</span> and <span class="font-medium text-sky-300">collaborations</span>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="border-b border-slate-800/70 bg-slate-950 py-14 sm:py-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <h2 class="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">Projects</h2>
+              <p class="mt-1 text-sm text-slate-300 sm:text-[15px]">
+                A selection of example projects you can replace with your own work.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <!-- Project 1 -->
+            <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-4 transition hover:border-sky-500/80 hover:bg-slate-900">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-base font-semibold text-slate-50">Modern Portfolio Website</h3>
+                  <p class="mt-1 text-xs text-slate-300">
+                    A responsive single-page portfolio layout with smooth scrolling navigation and theme support.
+                  </p>
+                </div>
+                <span class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium uppercase tracking-wide text-slate-300">Frontend</span>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] text-slate-300">
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">HTML</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">Tailwind CSS</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">JavaScript</span>
+              </div>
+              <p class="mt-3 text-xs text-slate-400">
+                Designed to be easily customizable so you can plug in your own content, links, and case studies.
+              </p>
+            </article>
+            <!-- Project 2 -->
+            <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-4 transition hover:border-sky-500/80 hover:bg-slate-900">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-base font-semibold text-slate-50">Task Tracker App</h3>
+                  <p class="mt-1 text-xs text-slate-300">
+                    A simple task manager with filters, priorities, and local storage persistence.
+                  </p>
+                </div>
+                <span class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium uppercase tracking-wide text-slate-300">App</span>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] text-slate-300">
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">JavaScript</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">LocalStorage</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">Responsive UI</span>
+              </div>
+              <p class="mt-3 text-xs text-slate-400">
+                Showcase how you approach state management, UX decisions, and user feedback for common workflows.
+              </p>
+            </article>
+            <!-- Project 3 -->
+            <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-4 transition hover:border-sky-500/80 hover:bg-slate-900">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-base font-semibold text-slate-50">API Explorer Dashboard</h3>
+                  <p class="mt-1 text-xs text-slate-300">
+                    A dashboard-style interface for exploring public APIs with charts, filters, and search.
+                  </p>
+                </div>
+                <span class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium uppercase tracking-wide text-slate-300">Dashboard</span>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] text-slate-300">
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">REST APIs</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">Charts</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">Async JS</span>
+              </div>
+              <p class="mt-3 text-xs text-slate-400">
+                Great for highlighting your ability to work with external data, loading states, and error handling.
+              </p>
+            </article>
+            <!-- Project 4 -->
+            <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-4 transition hover:border-sky-500/80 hover:bg-slate-900">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-base font-semibold text-slate-50">Design System Components</h3>
+                  <p class="mt-1 text-xs text-slate-300">
+                    A small, reusable component library with buttons, forms, and layout utilities.
+                  </p>
+                </div>
+                <span class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium uppercase tracking-wide text-slate-300">UI</span>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] text-slate-300">
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">Component Design</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">Accessibility</span>
+                <span class="rounded-full bg-slate-800/80 px-2.5 py-1">Reusable Code</span>
+              </div>
+              <p class="mt-3 text-xs text-slate-400">
+                Demonstrates attention to detail, design consistency, and how you structure UI at scale.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="border-b border-slate-800/70 bg-slate-950 py-14 sm:py-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+            <div>
+              <h2 class="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">Skills</h2>
+              <p class="mt-1 text-sm text-slate-300 sm:text-[15px]">
+                Technologies and tools you can customize to match your own experience.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8 grid gap-6 md:grid-cols-3">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <h3 class="text-sm font-semibold text-slate-100">Frontend</h3>
+              <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+                <li>HTML5, semantic markup</li>
+                <li>CSS3, Flexbox, Grid</li>
+                <li>Tailwind CSS, responsive design</li>
+                <li>JavaScript (ES6+), DOM manipulation</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <h3 class="text-sm font-semibold text-slate-100">Backend &amp; Tools</h3>
+              <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+                <li>Basic REST APIs</li>
+                <li>JSON, HTTP concepts</li>
+                <li>Git &amp; GitHub</li>
+                <li>Command line basics</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <h3 class="text-sm font-semibold text-slate-100">Soft Skills</h3>
+              <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+                <li>Clear communication</li>
+                <li>Team collaboration</li>
+                <li>Continuous learning</li>
+                <li>Attention to detail</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="border-b border-slate-800/70 bg-slate-950 py-14 sm:py-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
+            <div>
+              <h2 class="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">Contact</h2>
+              <p class="mt-1 text-sm text-slate-300 sm:text-[15px]">
+                Ready to collaborate, discuss an opportunity, or just say hello? Drop a message below.
+              </p>
+              <form id="contactForm" class="mt-6 space-y-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5">
+                <div>
+                  <label for="name" class="block text-xs font-medium text-slate-200">Name</label>
+                  <input id="name" name="name" type="text" required
+                    class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none transition focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                    placeholder="Your name" />
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-medium text-slate-200">Email</label>
+                  <input id="email" name="email" type="email" required
+                    class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none transition focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                    placeholder="you@example.com" />
+                </div>
+                <div>
+                  <label for="message" class="block text-xs font-medium text-slate-200">Message</label>
+                  <textarea id="message" name="message" rows="4" required
+                    class="mt-1 w-full resize-none rounded-lg border border-slate-700 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none transition focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                    placeholder="Tell me a bit about what you're looking for..."></textarea>
+                </div>
+                <button type="submit"
+                  class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-500 px-4 py-2.5 text-sm font-semibold text-slate-950 shadow-sm shadow-sky-500/40 transition hover:bg-sky-400">
+                  Send Message
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 13l4 4L19 7" />
+                  </svg>
+                </button>
+                <p id="formStatus" class="hidden text-xs text-emerald-400">Thank you! Your message is ready to be sent via your email client.</p>
+              </form>
+            </div>
+            <div class="space-y-4 md:pl-6">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Direct links</h3>
+              <ul class="space-y-2 text-sm text-slate-200">
+                <li>
+                  <span class="text-slate-400">Email:</span>
+                  <a id="emailLink" href="mailto:rohith2003t@gmail.com.com" class="text-sky-300 hover:text-sky-200">rohith2003t@gmail.com</a>
+                </li>
+                <li>
+                  <span class="text-slate-400">GitHub:</span>
+                  <a href="https://github.com/Rohith2003-dev" class="text-sky-300 hover:text-sky-200">github.com/Rohith2003-dev</a>
+                </li>
+                <li>
+                  <span class="text-slate-400">LinkedIn:</span>
+                  <a href="https://www.linkedin.com/in/rohith-t0228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-sky-300 hover:text-sky-200">linkedin.com/in/rohith-t0228</a>
+                </li>
+              </ul>
+              <p class="pt-2 text-xs text-slate-400">
+                Replace the placeholder links with your actual profiles to make it easy for people to connect with you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/70 bg-slate-950">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-4 text-[11px] text-slate-500 sm:flex-row sm:px-6">
+        <p>© <span id="year"></span> Rohith. All rights reserved.</p>
+        <p>Built with HTML, Tailwind CSS &amp; JavaScript.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Theme Toggle (light/dark)
+    (function() {
+      const root = document.documentElement;
+      const body = document.body;
+      const toggleBtn = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          body.classList.remove('bg-slate-950', 'text-slate-100');
+          body.classList.add('bg-slate-100', 'text-slate-900');
+          icon.textContent = '🌙';
+        } else {
+          body.classList.remove('bg-slate-100', 'text-slate-900');
+          body.classList.add('bg-slate-950', 'text-slate-100');
+          icon.textContent = '☀️';
+        }
+        localStorage.setItem('theme', theme);
+      }
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      }
+      toggleBtn.addEventListener('click', () => {
+        const current = localStorage.getItem('theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
+    // Mobile nav toggle
+    (function() {
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileMenu');
+      const iconOpen = document.getElementById('navIconOpen');
+      const iconClose = document.getElementById('navIconClose');
+      toggle.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          menu.classList.add('hidden');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          menu.classList.remove('hidden');
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+      // Close mobile menu when clicking a link
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        });
+      });
+    })();
+    // Contact form: open email client with filled details
+    (function() {
+      const form = document.getElementById('contactForm');
+      const statusEl = document.getElementById('formStatus');
+      const emailLink = document.getElementById('emailLink');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const subject = encodeURIComponent('Portfolio contact from ' + name);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        const href = `mailto:rohith@example.com?subject=${subject}&body=${body}`;
+        emailLink.href = href;
+        window.location.href = href;
+        statusEl.classList.remove('hidden');
+        form.reset();
+      });
+    })();
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
